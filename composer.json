@@ -1,0 +1,83 @@
+{
+  "name": "mceikens/t3landscape",
+  "description": "TYPO3 CMS webpage for TYPO3 ecosystem landscape",
+  "license": "proprietary",
+  "type": "project",
+  "version": "1.0.0",
+  "require": {
+    "php": "^8.4",
+    "ext-intl": "*",
+    "ext-json": "*",
+    "ext-simplexml": "*",
+    "helhum/dotenv-connector": "^3.0",
+    "helhum/typo3-console": "^8.2",
+    "typo3/cms-adminpanel": "^13.4",
+    "typo3/cms-backend": "^13.4",
+    "typo3/cms-belog": "^13.4",
+    "typo3/cms-beuser": "^13.4",
+    "typo3/cms-core": "^13.4",
+    "typo3/cms-dashboard": "^13.4",
+    "typo3/cms-extbase": "^13.4",
+    "typo3/cms-extensionmanager": "^13.4",
+    "typo3/cms-felogin": "^13.4",
+    "typo3/cms-filelist": "^13.4",
+    "typo3/cms-filemetadata": "^13.4",
+    "typo3/cms-fluid": "^13.4",
+    "typo3/cms-fluid-styled-content": "^13.4",
+    "typo3/cms-form": "^13.4",
+    "typo3/cms-frontend": "^13.4",
+    "typo3/cms-info": "^13.4",
+    "typo3/cms-install": "^13.4",
+    "typo3/cms-lowlevel": "^13.4",
+    "typo3/cms-reactions": "^13.4",
+    "typo3/cms-redirects": "^13.4",
+    "typo3/cms-reports": "^13.4",
+    "typo3/cms-rte-ckeditor": "^13.4",
+    "typo3/cms-scheduler": "^13.4",
+    "typo3/cms-seo": "^13.4",
+    "typo3/cms-setup": "^13.4",
+    "typo3/cms-tstemplate": "^13.4"
+  },
+  "require-dev": {
+    "phpstan/extension-installer": "^1.4",
+    "saschaegerer/phpstan-typo3": "^1.10",
+    "typo3/coding-standards": "^0.8.0",
+    "typo3/testing-framework": "^8.2",
+    "deployer/deployer": "^7.5",
+    "phpspec/prophecy": "*",
+    "phpspec/prophecy-phpunit": "*",
+    "jangregor/phpstan-prophecy": "*",
+    "php-mock/php-mock-phpunit": "*",
+    "phpmd/phpmd": "^2.15",
+    "mockery/mockery": "^1.6",
+    "phpstan/phpstan-mockery": "^1.1"
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "packages/*"
+    }
+  ],
+  "config": {
+    "allow-plugins": {
+      "helhum/dotenv-connector": true,
+      "php-http/discovery": true,
+      "phpstan/extension-installer": true,
+      "typo3/class-alias-loader": true,
+      "typo3/cms-composer-installers": true
+    }
+  },
+  "extra": {
+    "helhum/dotenv-connector": {
+      "env-file": ".env",
+      "adapter": "Helhum\\DotEnvConnector\\Adapter\\SymfonyDotEnv"
+    },
+    "helhum/typo3-connector": {
+      "install-extension-dummy": false
+    },
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": "public"
+    }
+  }
+}

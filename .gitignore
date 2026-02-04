@@ -1,0 +1,7 @@
+.idea
+.vscode
+.env
+var
+vendor
+public/typo3temp
+public/fileadmin

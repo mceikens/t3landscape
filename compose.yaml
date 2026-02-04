@@ -1,0 +1,41 @@
+services:
+  db:
+    image: mariadb:11.1.2
+    volumes:
+      - db_volume:/var/lib/mysql
+      - ./container/db/shared:/custom
+    ports:
+      - 3308:3306
+    environment:
+      MYSQL_DATABASE: "dev"
+      MYSQL_USER: "dev"
+      MYSQL_PASSWORD: "dev"
+      MYSQL_ROOT_PASSWORD: "root"
+    restart: on-failure
+  php:
+    image: registry.mceikens-infra.de/typo3-foss/php-fpm-84-dev:1.0.0
+    user: "${UID:-1000}:${GID:-1000}"
+    volumes:
+      - ./container/php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/xdebug-custom.ini
+      - .:/var/www/html:delegated
+    depends_on:
+      - db
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+  nginx:
+    image: nginx:1.25.2-alpine
+    volumes:
+      - ./container/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
+      - .:/var/www/html:delegated
+    ports:
+      - 8000:80
+    depends_on:
+      - php
+  mailpit:
+    image: axllent/mailpit
+    ports:
+      - 8025:8025
+      - 1025:1025
+volumes:
+  db_volume:
+    driver: local
