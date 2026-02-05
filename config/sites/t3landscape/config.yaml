@@ -14,7 +14,7 @@ languages:
   - title: Deutsch
     enabled: true
     languageId: 1
-    base: /
+    base: /de/
     typo3Language: de
     locale: de_DE.UTF-8
     iso-639-1: de
