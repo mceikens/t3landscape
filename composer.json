@@ -40,6 +40,7 @@
     "typo3/cms-seo": "^14.1",
     "typo3/cms-setup": "^14.1",
     "typo3/cms-tstemplate": "^14.1",
+    "mceikens/logwriter": "^1.0",
     "mceikens/sitepackage": "^1.0"
   },
   "require-dev": {
