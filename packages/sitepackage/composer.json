@@ -1,0 +1,24 @@
+{
+  "name": "mceikens/sitepackage",
+  "type": "typo3-cms-extension",
+  "description": "Sitepackage Extension for T3Landscape TYPO3 CMS",
+  "license": "GPL-2.0-or-later",
+  "version": "1.0.0",
+  "require": {
+    "php": "^8.4",
+    "typo3/cms-core": "^14",
+    "typo3/cms-extbase": "^14",
+    "typo3/cms-fluid": "^14",
+    "typo3/cms-fluid-styled-content": "^14"
+  },
+  "autoload": {
+    "psr-4": {
+      "MCEikens\\Sitepackage\\": "src/"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "sitepackage"
+    }
+  }
+}

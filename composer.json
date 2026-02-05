@@ -4,11 +4,14 @@
   "license": "proprietary",
   "type": "project",
   "version": "1.0.0",
+  "prefer-stable": true,
+  "minimum-stability": "stable",
   "require": {
     "php": "^8.4",
     "ext-intl": "*",
     "ext-json": "*",
     "ext-simplexml": "*",
+    "ext-sodium": "*",
     "helhum/dotenv-connector": "^3.0",
     "helhum/typo3-console": "^8.2",
     "typo3/cms-adminpanel": "^14.1",
@@ -36,7 +39,8 @@
     "typo3/cms-scheduler": "^14.1",
     "typo3/cms-seo": "^14.1",
     "typo3/cms-setup": "^14.1",
-    "typo3/cms-tstemplate": "^14.1"
+    "typo3/cms-tstemplate": "^14.1",
+    "mceikens/sitepackage": "^1.0"
   },
   "require-dev": {
     "phpstan/extension-installer": "^1.4",
@@ -78,5 +82,13 @@
       "cms-package-dir": "{$vendor-dir}/typo3/cms",
       "web-dir": "public"
     }
-  }
+  },
+  "authors": [
+    {
+      "name": "Eike Drost",
+      "email": "eike.drost@mceikens.de",
+      "homepage": "https://www.mceikens.de/",
+      "role": "Maintainer"
+    }
+  ]
 }

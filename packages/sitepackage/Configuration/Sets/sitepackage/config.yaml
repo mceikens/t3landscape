@@ -1,0 +1,5 @@
+name: mceikens/sitepackage
+label: 'Sitepackage Extension for T3Landscape TYPO3 CMS'
+dependencies:
+  - typo3/fluid-styled-content
+  - typo3/fluid-styled-content-css

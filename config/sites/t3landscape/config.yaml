@@ -1,0 +1,25 @@
+base: '%env("TYPO3_BASE_URL")%'
+dependencies:
+  - mceikens/sitepackage
+errorHandling: {  }
+languages:
+  -
+    title: English
+    enabled: true
+    languageId: 0
+    base: /
+    locale: en_US.UTF-8
+    navigationTitle: English
+    flag: us
+  - title: Deutsch
+    enabled: true
+    languageId: 1
+    base: /
+    typo3Language: de
+    locale: de_DE.UTF-8
+    iso-639-1: de
+    navigationTitle: Deutsch
+    hreflang: de-DE
+    flag: de
+rootPageId: 1
+routes: {  }
