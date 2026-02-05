@@ -1,0 +1,2 @@
+@import 'EXT:sitepackage/Configuration/TypoScript/Setup/Helper/DynamicContent.typoscript'
+@import 'EXT:sitepackage/Configuration/TypoScript/Setup/Page/index.typoscript'
