@@ -6,3 +6,5 @@ vendor
 public/typo3temp
 public/fileadmin
 public/*
+packages/sitepackage/Resources/node_modules
+packages/sitepackage/Resources/.yarn
