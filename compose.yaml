@@ -34,6 +34,20 @@ services:
     ports:
       - 8025:8025
       - 1025:1025
+  valkey:
+    image: valkey/valkey:9.0.2-alpine
+    restart: unless-stopped
+    volumes:
+      - ./container/valkey/conf.d/valkey.conf:/etc/valkey/valkey.conf:ro
+      - valkey_volume:/data
+    command: valkey-server /etc/valkey/valkey.conf
+    ports:
+      - '6379:6379'
+    healthcheck:
+      test: [ "CMD", "valkey-cli", "--pass", "dev", "ping" ]
+      interval: 10s
+      timeout: 3s
+      retries: 3
 volumes:
   db_volume:
     driver: local
