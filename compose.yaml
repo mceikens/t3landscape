@@ -51,3 +51,5 @@ services:
 volumes:
   db_volume:
     driver: local
+  valkey_volume:
+    driver: local
