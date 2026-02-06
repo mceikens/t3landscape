@@ -14,12 +14,13 @@ services:
     restart: on-failure
   php:
     image: registry.mceikens-infra.de/typo3-foss/php-fpm-84-dev:2.3.0
-    user: "${UID:-1000}:${GID:-1000}"
+    user: "${USER_ID}:${GROUP_ID}"
     volumes:
       - ./container/php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/xdebug-custom.ini
       - .:/var/www/html:delegated
     depends_on:
       - db
+    restart: on-failure
   nginx:
     image: nginx:1.25.2-alpine
     volumes:
@@ -29,14 +30,16 @@ services:
       - 8000:80
     depends_on:
       - php
+    restart: on-failure
   mailpit:
     image: axllent/mailpit
     ports:
       - 8025:8025
       - 1025:1025
+    restart: on-failure
   valkey:
     image: valkey/valkey:9.0.2-alpine
-    restart: unless-stopped
+    restart: on-failure
     volumes:
       - ./container/valkey/conf.d/valkey.conf:/etc/valkey/valkey.conf:ro
       - valkey_volume:/data
@@ -48,6 +51,14 @@ services:
       interval: 10s
       timeout: 3s
       retries: 3
+  yarn:
+    image: registry.mceikens-infra.de/foss/nodejs-yarn-dev:1.0.0
+    volumes:
+      - .:/var/www/html:delegated
+    user: "${USER_ID}:${GROUP_ID}"
+    working_dir: /var/www/html/packages/sitepackage/Resources
+    tty: true
+    stdin_open: true
 volumes:
   db_volume:
     driver: local
