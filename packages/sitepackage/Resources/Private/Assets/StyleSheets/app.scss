@@ -4,5 +4,9 @@ $bootstrap-icons-font-dir: "../fonts";
 @import 'bootstrap-icons/font/bootstrap-icons.scss';
 
 body {
-
+  #page {
+    @import './Sections/Header';
+    @import './Sections/Content';
+    @import './Sections/Footer';
+  }
 }

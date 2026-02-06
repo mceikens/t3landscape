@@ -1,0 +1,26 @@
+<div itemscope itemtype="https://schema.org/SiteNavigationElement">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top shadow-lg">
+        <div class="container-fluid px-5">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/" title="To root page">
+                    <img class="navbar-logo" src="{f:uri.resource(path:'Logos/t3landscape-logo-navigation.svg', extensionName:'sitepackage')}" alt="T3Landscape Logo. Leuchtturm mit Schrift">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navbar">
+                <ul class="navbar-nav ml-auto">
+                    <f:for each="{navigation}" as="navigationItem">
+                        <li class="nav-item {f:if(condition: navigationItem.active, then: 'active')}">
+                            <a class="nav-link"
+                               href="{navigationItem.link}"
+                               target="{navigationItem.target}"
+                               title="{navigationItem.title}"
+                            >
+                                {navigationItem.title}
+                            </a>
+                        </li>
+                    </f:for>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>

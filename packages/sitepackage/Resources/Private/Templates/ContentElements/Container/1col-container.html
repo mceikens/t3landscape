@@ -1,0 +1,9 @@
+<div class="container {data.space_before_class} {data.space_after_class}">
+    <div class="row">
+        <div class="col-12">
+            <f:for each="{children_201}" as="element">
+                {element.renderedContent -> f:format.raw()}
+            </f:for>
+        </div>
+    </div>
+</div>
