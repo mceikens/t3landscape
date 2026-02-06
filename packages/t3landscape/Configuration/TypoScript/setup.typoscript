@@ -1,0 +1,15 @@
+plugin {
+    tx_t3landscape {
+        view {
+            partialRootPaths {
+                0 = EXT:t3landscape/Resources/Private/Partials/
+            }
+            templateRootPaths {
+                0 = EXT:t3landscape/Resources/Private/Templates/
+            }
+            layoutRootPaths {
+                0 = EXT:t3landscape/Resources/Private/Layouts/
+            }
+        }
+    }
+}

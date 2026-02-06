@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cb584735420aba01e0a852c91a5ba6ab",
+    "content-hash": "5f0b570ed5ceb81d298f886200055c4a",
     "packages": [
         {
             "name": "b13/container",
@@ -1614,6 +1614,48 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Sitepackage Extension for T3Landscape TYPO3 CMS",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "mceikens/t3landscape",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "packages/t3landscape",
+                "reference": "cfd0a6728379056b4bef29abe45b8ef504dc0020"
+            },
+            "require": {
+                "php": "^8.4",
+                "psr/http-message": "^2.0",
+                "typo3/cms-core": "^14",
+                "typo3/cms-extbase": "^14",
+                "typo3/cms-fluid": "^14",
+                "typo3/cms-frontend": "^14"
+            },
+            "type": "library",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "t3landscape"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MCEikens\\T3Landscape\\": "src/"
+                }
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Eike Drost",
+                    "email": "eike.drost@mceikens.de",
+                    "homepage": "https://www.mceikens.de/"
+                }
+            ],
+            "description": "TYPO3 Extension to get a landscape of possibilities",
             "transport-options": {
                 "relative": true
             }

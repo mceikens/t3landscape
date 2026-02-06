@@ -1,5 +1,5 @@
 {
-  "name": "mceikens/t3landscape",
+  "name": "mceikens/t3landscape-cms",
   "description": "TYPO3 CMS webpage for TYPO3 ecosystem landscape",
   "license": "proprietary",
   "type": "project",
@@ -41,7 +41,8 @@
     "typo3/cms-setup": "^14.1",
     "typo3/cms-tstemplate": "^14.1",
     "mceikens/logwriter": "^1.0",
-    "mceikens/sitepackage": "^1.0"
+    "mceikens/sitepackage": "^1.0",
+    "mceikens/t3landscape": "^1.0"
   },
   "require-dev": {
     "phpstan/extension-installer": "^1.4",

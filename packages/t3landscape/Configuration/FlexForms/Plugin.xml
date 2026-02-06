@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <sheets>
+        <main>
+            <ROOT>
+                <sheetTitle>LLL:EXT:t3landscape/Resources/Private/Language/locallang.xlf:plugin.settings</sheetTitle>
+                <type>array</type>
+                <el>
+                    <settings.pluginPid>
+                        <label>LLL:EXT:t3landscape/Resources/Private/Language/locallang.xlf:plugin.pid</label>
+                        <config>
+                            <type>group</type>
+                            <allowed>pages</allowed>
+                            <size>1</size>
+                            <maxitems>1</maxitems>
+                            <suggestOptions>
+                                <default>
+                                    <searchWholePhrase>true</searchWholePhrase>
+                                </default>
+                            </suggestOptions>
+                        </config>
+                    </settings.pluginPid>
+                </el>
+            </ROOT>
+        </main>
+    </sheets>
+</T3DataStructure>

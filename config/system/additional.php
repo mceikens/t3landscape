@@ -4,6 +4,7 @@ use MCEikens\LogWriter\Log\Writer\RotatingJsonLogWriter;
 use Monolog\Handler\RotatingFileHandler;
 use Psr\Log\LogLevel;
 use TYPO3\CMS\Core\Cache\Backend\RedisBackend;
+use TYPO3\CMS\Core\Cache\Frontend\VariableFrontend;
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Log\Writer\FileWriter;
 
@@ -101,6 +102,18 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['rootline']
     'hostname' => getenv('KEY_VALUE_STORE_HOSTNAME'),
     'port' => (int) getenv('KEY_VALUE_STORE_PORT'),
     'password' => getenv('KEY_VALUE_STORE_PASSWORD'),
+];
+
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['mceikens_landscape_html'] = [
+    'backend' => RedisBackend::class,
+    'options' => [
+        'database' => 5,
+        'hostname' => getenv('KEY_VALUE_STORE_HOSTNAME'),
+        'port' => (int) getenv('KEY_VALUE_STORE_PORT'),
+        'password' => getenv('KEY_VALUE_STORE_PASSWORD'),
+        'defaultLifetime' => 0,
+    ],
+    'frontend' => VariableFrontend::class,
 ];
 
 /*

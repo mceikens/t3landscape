@@ -1,0 +1,21 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  MCEikens\T3Landscape\:
+    resource: '../src/*'
+    exclude:
+      - '../src/Domain/Model/*'
+      - '../tests/*'
+
+  cache.mceikens_t3landscape_cache:
+    class: TYPO3\CMS\Core\Cache\Frontend\FrontendInterface
+    factory: [ '@TYPO3\CMS\Core\Cache\CacheManager', 'getCache' ]
+    arguments: [ 'mceikens_landscape_html' ]
+
+
+  MCEikens\T3Landscape\Manager\CacheManager:
+    arguments:
+      $cache: '@cache.mceikens_t3landscape_cache'
